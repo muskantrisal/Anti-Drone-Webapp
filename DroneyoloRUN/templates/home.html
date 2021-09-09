@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <style>h1{
+    font-family: Arial, Helvetica, sans-serif;
+    color:darkred;
+    text-align: center;
+    margin-top: 150px;
+    margin-right: 40px;
+    font-family:monospace;
+    font-size: 400%;
+    }
+
+    .wrapper{
+      text-align: center;
+      margin-top: 30px;
+      margin-right: 40px;
+    }
+
+    a:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  font-size: 30px;
+  background-color: transparent;
+            }
+
+  .pointer {cursor: pointer;
+  font-size: 200%;
+  }
+  .button1:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  font-size: 30px;
+  background-color: transparent;
+            }
+
+
+    
+</style>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body style="background-image: url(static/5668.jpg); height: 100%; width: 100%; 
+background-repeat: no-repeat;
+background-size: cover;">
+ <div class="login">
+   <h1>Drone Detector</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+  <div class="wrapper">
+<form action="{{ url_for('predict')}}" method="POST" enctype="multipart/form-data">
+    <input class= "button" id="video_file" name="video_file" type="file" style="display:none">
+    <label for="video_file"><p class="pointer"><u><i><b><a>Upload Video</a></b></i></u></p></label>
+
+  <br>
+    <input id="predict" type="submit" class="button1" value="Predict" style="display:none">
+    <label for='predict'><p class="pointer"><u><i><b><a>Predict</a></b></i></u></p></label>
+</form>
+</body>
+</html>
